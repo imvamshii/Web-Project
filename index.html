@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Webpage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        h2 {
+            color: #3498db;
+            font-size: 1.8rem;
+            margin: 30px 0 15px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 8px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .image-card {
+            width: 45%;
+            margin-bottom: 20px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .image-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .image-card p {
+            padding: 15px;
+            text-align: center;
+            color: #666;
+        }
+        
+        .btn-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(41, 128, 185, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(41, 128, 185, 0.6);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .links {
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .links a {
+            display: inline-block;
+            margin: 0 15px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .links a:hover {
+            color: #2c3e50;
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #777;
+        }
+        
+        @media (max-width: 768px) {
+            .image-card {
+                width: 100%;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to My Interactive Website</h1>
+            <p>This is a demonstration of HTML, CSS, and JavaScript working together to create an engaging web experience.</p>
+        </header>
+        
+        <section>
+            <h2>About This Project</h2>
+            <p>This webpage showcases how to combine different web technologies to create an interactive experience. Below you'll find images, links, and an interactive button that demonstrates JavaScript functionality.</p>
+            
+            <div class="image-container">
+                <div class="image-card">
+                    <img src="c:\Users\vamsh\Downloads\1999bdb21db58c013b98eea1700e325e.jpg" alt="Nature">
+                    <p>Beautiful nature scenery</p>
+                </div>
+                <div class="image-card">
+                    <img src="c:\Users\vamsh\Downloads\🤖 AI Bosses Fire 1_4M Workers Without Human Oversight 💼.jpeg" alt="Technology">
+                    <p>Modern technology devices</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Web Development Technologies</h2>
+            <p>This page uses three core web technologies:</p>
+            <p><strong>HTML</strong> provides the structure and content of the page.</p>
+            <p><strong>CSS</strong> handles the visual styling and layout.</p>
+            <p><strong>JavaScript</strong> adds interactivity and dynamic behavior.</p>
+        </section>
+        
+        <div class="btn-container">
+            <button class="btn" id="alertButton">Click for a Surprise Message!</button>
+        </div>
+        
+        <div class="links">
+            <h3>Learn More About Web Development</h3>
+            <a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a>
+            <a href="https://www.w3schools.com" target="_blank">W3Schools</a>
+            <a href="https://css-tricks.com" target="_blank">CSS-Tricks</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Interactive Webpage Demo. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get the button element
+        const alertButton = document.getElementById('alertButton');
+        
+        // Add click event listener
+        alertButton.addEventListener('click', function() {
+            // Show alert when button is clicked
+            alert('🎉 Congratulations! You discovered the interactive feature of this webpage! 🎉\n\nThis alert was triggered by JavaScript in response to your button click.');
+        });
+    </script>
+</body>
+</html>
